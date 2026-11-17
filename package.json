@@ -1,0 +1,70 @@
+{
+  "name": "mynotes",
+  "productName": "MyNotes",
+  "version": "1.0.0",
+  "description": "Notes and PDF annotation for Mac, Windows and the web",
+  "main": "main.js",
+  "author": "MyNotes",
+  "license": "UNLICENSED",
+  "private": true,
+  "scripts": {
+    "start": "node prepare.js && electron .",
+    "dist": "node prepare.js && electron-builder --publish never"
+  },
+  "devDependencies": {
+    "electron": "^31.7.0",
+    "electron-builder": "^24.13.3",
+    "pdfjs-dist": "3.11.174",
+    "pdf-lib": "1.17.1"
+  },
+  "build": {
+    "appId": "com.mynotes.app",
+    "productName": "MyNotes",
+    "copyright": "MyNotes",
+    "files": [
+      "main.js",
+      "preload.js",
+      "app/**/*",
+      "package.json"
+    ],
+    "directories": {
+      "output": "dist"
+    },
+    "mac": {
+      "target": [
+        {
+          "target": "dmg",
+          "arch": [
+            "universal"
+          ]
+        }
+      ],
+      "category": "public.app-category.productivity",
+      "icon": "icon-512.png",
+      "identity": null,
+      "hardenedRuntime": false,
+      "gatekeeperAssess": false,
+      "artifactName": "MyNotes-${version}-mac.${ext}"
+    },
+    "dmg": {
+      "title": "MyNotes ${version}"
+    },
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "icon": "icon-512.png",
+      "artifactName": "MyNotes-Setup-${version}.${ext}"
+    },
+    "nsis": {
+      "oneClick": true,
+      "perMachine": false,
+      "deleteAppDataOnUninstall": false
+    }
+  }
+}
