@@ -51,7 +51,7 @@ Write with Apple Pencil, a pen tablet, a trackpad or a mouse. Everything is stor
 ### On a Mac
 1. Go to the [latest release](https://github.com/adamahadidy/mynotes/releases/latest) and download `MyNotes-…-mac.dmg`.
 2. Open the file and drag **MyNotes** into **Applications**.
-3. The first time, **right-click** the app, choose **Open**, then **Open** again. (See "About the warnings" below.)
+3. The first time, **right-click** the app, choose **Open**, then **Open** again.
 
 Works on Intel and Apple Silicon Macs.
 
